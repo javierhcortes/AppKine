@@ -171,54 +171,16 @@
           <!-- /.box -->
         </div>
       </div>
-
       <!-- Small boxes (Stat box) -->
-      <div class="row">
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-aqua">
-            <div class="inner">
-              <p>Sintomatología</p>
-            </div>
-            <a href="#" class="small-box-footer">Mas información <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-green">
-            <div class="inner">
-              <p>Factores de Riesgo</p>
-            </div>
-            <a href="#" class="small-box-footer">Mas información <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-yellow">
-            <div class="inner">
-              <p>Prevención</p>
-            </div>
-            <a href="#" class="small-box-footer">Mas información <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-red">
-            <div class="inner">
-              <p>Apoyo Psicológico</p>
-            </div>
-
-            <a href="#" class="small-box-footer">Mas información <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-      </div>
-
     </section>
     <!-- /.content -->
+
+    <section class="content">
+       <div id="surveyContainer"></div>
+    </section>
+
+
+
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
@@ -230,6 +192,7 @@
 </div>
 <!-- ./wrapper -->
 
+</script>
 <!-- jQuery 3 -->
 <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
@@ -267,5 +230,24 @@
 <script src="../../dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
+
+<script src="https://surveyjs.azureedge.net/1.0.39/survey.jquery.min.js"></script>
+<script type="text/javascript">
+  Survey.Survey.cssType = "bootstrap";
+
+var surveyJSON = {pages:[{name:"page1",elements:[{type:"matrix",name:"ENTREVISTA SOBRECARGA CUIDADOR ZARIT",title:"ENTREVISTA SOBRECARGA CUIDADOR",columns:[{value:"0",text:"NUNCA"},{value:"1",text:"RARA VEZ"},{value:"2",text:"ALGUNAS VECES"},{value:"3",text:"BASTANTES VECES"},{value:"4",text:"CASI SIEMPRE"}],rows:["1.\t¿Piensa que su familiar le pide más ayuda de la que realmente necesita?\t\t\t\t\t","2.\t¿Piensa que debido al tiempo que dedica a su familiar no tiene suficiente tiempo para Ud.?\t\t\t\t\t","3.\t¿Se siente agobiado por intentar compatibilizar el cuidado de su familiar con otras responsabilidades (trabajo, familia)?\t\t\t\t\t","4.\t¿Siente vergüenza por la conducta de su familiar?\t\t\t\t\t","5.\t¿Se siente enfadado cuando está cerca de su familiar?\t\t\t\t\t","6.\t¿Piensa que el cuidar de su familiar afecta negativamente la relación que usted tiene con otros miembros de su familia?\t\t\t\t\t","7.\t¿Tiene miedo por el futuro de su familiar?\t\t\t\t\t","8.\t¿Piensa que su familiar depende de Vd.?\t\t\t\t\t","9.\t¿Se siente tenso cuando está cerca de su familiar?\t\t\t\t\t","10.\t¿Piensa que su salud ha empeorado debido a tener que cuidar de su familiar?\t\t\t\t\t","11.\t¿Piensa que no tiene tanta intimidad como le gustaría debido a tener que cuidar de su familiar?\t\t\t\t\t","12.\t¿Piensa que su vida social se ha visto afectada negativamente por tener que cuidar a su familiar?\t\t\t\t\t","13.\t¿Se siente incómodo por distanciarse de sus amistades debido a tener que cuidar de su familiar?\t\t\t\t\t","14.\t¿Piensa que su familiar le considera a usted la única persona que le puede cuidar?\t\t\t\t\t","15.\t¿Piensa que no tiene suficientes ingresos económicos para los gastos de cuidar a su familiar, además de sus otros gastos?\t\t\t\t\t","16.\t¿Piensa que no será capaz de cuidar a su familiar por mucho más tiempo?\t\t\t\t\t","17.\t¿Siente que ha perdido el control de su vida desde que comenzó la enfermedad de su familiar?\t\t\t\t\t","18.\t¿Desearía poder dejar el cuidado de su familiar a otra persona?\t\t\t\t\t","19.\t¿Se siente indeciso sobre qué hacer con su familiar\t\t\t\t\t","20.\t¿Piensa que debería hacer más por su familiar?\t\t\t\t\t","21.\t¿Piensa que podría cuidar mejor a su familiar?\t\t\t\t\t","22.\tGlobalmente, ¿qué grado de \"carga\" experimenta por el hecho de cuidar a su familiar?"]}]}]}
+
+function sendDataToServer(survey) {
+    //send Ajax request to your web server.
+    alert("The results are:" + JSON.stringify(survey.data));
+}
+
+var survey = new Survey.Model(surveyJSON);
+$("#surveyContainer").Survey({
+    model: survey,
+    onComplete: sendDataToServer
+});
+
+</script>
 </body>
 </html>
