@@ -149,74 +149,42 @@
     
     <!-- Main content -->
     <section class="content">
-      <!-- Small boxes (Stat box) -->
-      <div class="row">
-        <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-12 col-xs-12">
+                <div class="box box-solid">
+                  <div class="box-header with-border">
+                    <h3 class="box-title">Collapsible Accordion</h3>
+                  </div>
+                  <!-- /.box-header -->
+                  <div class="box-body">
+                    <div class="box-group" id="accordion">
+                      <!-- we are adding the .panel class so bootstrap.js collapse plugin detects it -->
+                      <div class="panel box box-danger">
+                        <div class="box-header with-border">
+                          <h4 class="box-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed" aria-expanded="false">
+                              ANSIEDAD
+                            </a>
+                          </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse" aria-expanded="false">
+                          <div class="box-body">
+                              <p style="line-height: 1.295; margin-top: 0pt; margin-bottom: 8pt;"><strong><span style="font-size: 11pt; font-family: Calibri; color: #000000; background-color: transparent; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">ANSIEDAD</span></strong></p>
+                              <p style="line-height: 1.295; margin-top: 0pt; margin-bottom: 8pt;"><span style="font-size: 11pt; font-family: Calibri; color: #000000; background-color: transparent; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">La ansiedad es algo normal, se caracteriza por la presencia de molestias relacionadas y/o similares al miedo, tales como: intranquilidad, desesperaci&oacute;n, temor, preocupaciones excesivas; o una combinaci&oacute;n entre ellos. </span></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+            </div>
+          </div>
+
           <div class="box box-default">
-            <div class="box-header with-border">
-              <i class="fa fa-bullhorn"></i>
-
-              <h3 class="box-title">¿QUÉ ES UN ACV?</h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              <div class="callout callout-success">
-                <h4>
-                  Un ataque cerebro vascular (ACV) es una emergencia médica, que ocurre cuando se interrumpe el suministro de sangre al cerebro o cuando existe un sangrado en el cerebro. Puede ocurrirle a cualquier persona y de un momento a otro, independiente de su edad, sexo o raza. No obstante, existen factores de riesgo que hacen aumentar la probabilidad de padecerlo.  El cerebro para funcionar necesita que le llegue oxígeno a través de la sangre. Cuando se interrumpe el flujo de sangre a una zona del cerebro las células no tienen suficiente oxígeno para vivir y mueren. Llamamos a esto infarto cerebral.
-                </h4>                
-              </div>
-            </div>
-            <!-- /.box-body -->
+              <div id="surveyContainer"></div>
           </div>
-          <!-- /.box -->
-        </div>
-      </div>
-
-      <!-- Small boxes (Stat box) -->
-      <div class="row">
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-aqua">
-            <div class="inner">
-              <p>Sintomatología</p>
-            </div>
-            <a href="#" class="small-box-footer">Mas información <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-green">
-            <div class="inner">
-              <p>Factores de Riesgo</p>
-            </div>
-            <a href="#" class="small-box-footer">Mas información <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-yellow">
-            <div class="inner">
-              <p>Prevención</p>
-            </div>
-            <a href="#" class="small-box-footer">Mas información <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-red">
-            <div class="inner">
-              <p>Apoyo Psicológico</p>
-            </div>
-
-            <a href="#" class="small-box-footer">Mas información <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-      </div>
-
     </section>
     <!-- /.content -->
   </div>
@@ -266,6 +234,24 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="../../dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="../../dist/js/demo.js"></script>
+<script src="../../dist/js/demo.js"></script><script src="https://surveyjs.azureedge.net/1.0.39/survey.jquery.min.js"></script>
+<script type="text/javascript">
+  Survey.Survey.cssType = "bootstrap";
+
+var surveyJSON = {pages:[{name:"page1",elements:[{type:"matrix",name:"CUESTIONARIO ANSIEDAD",title:"CUESTIONARIO ANSIEDAD",columns:[{value:"0",text:"NO"},{value:"1",text:"LEVE"},{value:"2",text:"MODERADO"},{value:"3",text:"BASTANTE"}],rows:["1. Torpe o entumecido","2. Acalorado","3. Con temblor en las piernas","4. Incapaz de relajarse","5. Con temor a que ocurra lo peor","6. Mareado, o que se le va la cabeza","7. Con latidos del corazón fuertes y acelerados","8. Inestable","9. Atemorizado o asustado","10. Nervioso","11. Con sensación de bloqueo","12. Con temblores en las manos","13. Inquieto, inseguro","14. Con miedo a perder el control","15. Con sensación de ahogo","16. Con temor a morir","17. Con miedo","18. Con problemas digestivos","19. Con desvanecimientos","20. Con rubor facial","21. Con sudores, fríos o calientes"]}]}]}
+
+function sendDataToServer(survey) {
+    //send Ajax request to your web server.
+    alert("The results are:" + JSON.stringify(survey.data));
+}
+
+var survey = new Survey.Model(surveyJSON);
+$("#surveyContainer").Survey({
+    model: survey,
+    onComplete: sendDataToServer
+});
+
+
+</script>
 </body>
 </html>

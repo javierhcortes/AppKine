@@ -149,76 +149,47 @@
     
     <!-- Main content -->
     <section class="content">
-      <!-- Small boxes (Stat box) -->
-      <div class="row">
-        <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-12 col-xs-12">
+                <div class="box box-solid">
+                  <div class="box-header with-border">
+                    <h3 class="box-title">Collapsible Accordion</h3>
+                  </div>
+                  <!-- /.box-header -->
+                  <div class="box-body">
+                    <div class="box-group" id="accordion">
+                      <!-- we are adding the .panel class so bootstrap.js collapse plugin detects it -->
+                      <div class="panel box box-danger">
+                        <div class="box-header with-border">
+                          <h4 class="box-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed" aria-expanded="false">
+                              DEPRESION
+                            </a>
+                          </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse" aria-expanded="false">
+                          <div class="box-body">
+                              <p style="line-height: 1.295; margin-top: 0pt; margin-bottom: 8pt;"><strong><span style="font-size: 11pt; font-family: Calibri; color: #000000; background-color: transparent; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">DEPRESI&Oacute;N</span></strong></p>
+                              <p style="line-height: 1.295; margin-top: 0pt; margin-bottom: 8pt;"><span style="font-size: 11pt; font-family: Calibri; color: #000000; background-color: transparent; font-weight: 400; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">La depresi&oacute;n es un trastorno del humor y del estado de &aacute;nimo que se manifiesta a partir de una serie de s&iacute;ntomas que incluyen cambios bruscos del humor, irritabilidad, falta de entusiasmo y una sensaci&oacute;n de congoja o angustia, trascendiendo a lo que se considera como normal. Puede implicar la p&eacute;rdida de inter&eacute;s en actividades hasta entonces queridas, as&iacute; como cambios cognitivos, como pensar ineficiente y elevada auto-cr&iacute;tica. Es definida operacionalmente por el Ministerio de Salud de Chile como una alteraci&oacute;n patol&oacute;gica del estado de &aacute;nimo, caracterizada por un descenso del humor que termina en tristeza, acompa&ntilde;ado de diversos s&iacute;ntomas y signos que persisten por a lo menos 2 semanas.</span></p>
+                              
+                          </div>
+                        </div>
+                      </div>
+                      
+                      
+    
+                    </div>
+                  </div>
+                  <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+            </div>
+          </div>
+
           <div class="box box-default">
-            <div class="box-header with-border">
-              <i class="fa fa-bullhorn"></i>
-
-              <h3 class="box-title">¿QUÉ ES UN ACV?</h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              <div class="callout callout-success">
-                <h4>
-                  Un ataque cerebro vascular (ACV) es una emergencia médica, que ocurre cuando se interrumpe el suministro de sangre al cerebro o cuando existe un sangrado en el cerebro. Puede ocurrirle a cualquier persona y de un momento a otro, independiente de su edad, sexo o raza. No obstante, existen factores de riesgo que hacen aumentar la probabilidad de padecerlo.  El cerebro para funcionar necesita que le llegue oxígeno a través de la sangre. Cuando se interrumpe el flujo de sangre a una zona del cerebro las células no tienen suficiente oxígeno para vivir y mueren. Llamamos a esto infarto cerebral.
-                </h4>                
-              </div>
-            </div>
-            <!-- /.box-body -->
+              <div id="surveyContainer"></div>
           </div>
-          <!-- /.box -->
-        </div>
-      </div>
-
-      <!-- Small boxes (Stat box) -->
-      <div class="row">
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-aqua">
-            <div class="inner">
-              <p>Sintomatología</p>
-            </div>
-            <a href="#" class="small-box-footer">Mas información <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-green">
-            <div class="inner">
-              <p>Factores de Riesgo</p>
-            </div>
-            <a href="#" class="small-box-footer">Mas información <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-yellow">
-            <div class="inner">
-              <p>Prevención</p>
-            </div>
-            <a href="#" class="small-box-footer">Mas información <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-red">
-            <div class="inner">
-              <p>Apoyo Psicológico</p>
-            </div>
-
-            <a href="#" class="small-box-footer">Mas información <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-      </div>
-
     </section>
-    <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
@@ -267,5 +238,24 @@
 <script src="../../dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
+<script src="https://surveyjs.azureedge.net/1.0.39/survey.jquery.min.js"></script>
+<script type="text/javascript">
+  Survey.Survey.cssType = "bootstrap";
+
+var surveyJSON = {pages:[{name:"page1",elements:[{type:"matrix",name:"TEST SOSPECHA DEPRESIÓN PHQ 9 ",title:"TEST SOSPECHA DEPRESIÓN ",columns:[" Nunca","Varios días ","Más de la mitad de los días ","Casi todos los días"],rows:["1. Tener poco interés o placer en hacer las cosas"," 2. Sentirse desanimado/a, deprimido/a, o sin esperanza",{value:"3. Con problemas en dormirse o en mantenerse dormido/a, o en dormir demasiado",visibleIf:"\r\n3. Con problemas en dormirse o en mantenerse\r\ndormido/a, o en dormir demasiado\r\n4. Sentirse cansado/a o tener poca energía\r\n5. Tener poco apetito o comer en exceso\r\n6. Sentir falta de amor propio- o que sea un\r\nfracaso que decepcionara a si mismo/a a su familia\r\n7. Tener dificultad para concentrarse en cosas\r\ntales como leer el periódico o mirar televisión\r\n8. Se muevo o habla tan lentamente que otra gente se podría dar cuenta- o se lo contrario, está tan agitado/a o inquieto/a que se mueve\r\nmucho más de lo acostumbrado\r\n9. Se le han ocurrido pensamientos de que sería mejor estar muerto/a o de que haría daño de\r\nalguna manera\r\n"},"4. Sentirse cansado/a o tener poca energía","5. Tener poco apetito o comer en exceso"," 6. Sentir falta de amor propio- o que sea un fracaso que decepcionara a si mismo/a a su familia"," 7. Tener dificultad para concentrarse en cosas tales como leer el periódico o mirar televisión","8. Se mueve o habla tan lentamente que otra gente se podría dar cuenta- o se lo contrario, está tan agitado/a o inquieto/a que se mueve mucho más de lo acostumbrado"," 9. Se le han ocurrido pensamientos de que sería mejor estar muerto/a o de que haría daño de alguna manera"]},{type:"dropdown",name:"Durante las dos últimas semanas ",title:" Durante las dos últimas semanas ¿con qué frecuencia le han molestado los siguientes problemas?\nSi usted se identificó con cualquier problema en este cuestionario, ¿cuán difícil se le ha hecho cumplir con su trabajo, atender su casa, o relacionarse con otras personas debido a estos problemas?",choices:["Nada en absoluto","Algo difícil","Muy difícil","Extremadamente difícil"]}]}]}
+
+function sendDataToServer(survey) {
+    //send Ajax request to your web server.
+    alert("The results are:" + JSON.stringify(survey.data));
+}
+
+var survey = new Survey.Model(surveyJSON);
+$("#surveyContainer").Survey({
+    model: survey,
+    onComplete: sendDataToServer
+});
+
+
+</script>
 </body>
 </html>
